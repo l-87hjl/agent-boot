@@ -1,0 +1,30 @@
+{
+  "_comment": "Agent TODO Template - Copy to agent/TODO.json and remove this comment field",
+  "_instructions": [
+    "Add tasks following the schema",
+    "Each task needs: id, title, status, priority",
+    "Optional: dependencies, description, metadata",
+    "Remove _comment and _instructions fields before use"
+  ],
+
+  "version": "1.0.0",
+  "tasks": [
+    {
+      "id": "example-task-001",
+      "title": "Example: Review project setup",
+      "status": "pending",
+      "priority": "high",
+      "description": "This is an example task showing the correct format. Delete this task and add your own.",
+      "dependencies": [],
+      "createdAt": "{{TIMESTAMP}}",
+      "updatedAt": "{{TIMESTAMP}}",
+      "completedAt": null,
+      "metadata": {
+        "category": "setup"
+      }
+    }
+  ],
+  "metadata": {
+    "projectName": "{{PROJECT_NAME}}"
+  }
+}

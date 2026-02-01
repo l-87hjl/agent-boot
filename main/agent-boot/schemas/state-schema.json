@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/l-87hjl/agent-boot/schemas/state-schema.json",
+  "title": "Agent State Schema",
+  "description": "Schema for agent STATE.json files in workspace repositories",
+  "type": "object",
+  "required": ["version", "lastUpdated", "activeProject", "currentPhase"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema version (semver format)",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of last state update"
+    },
+    "lastCommitSha": {
+      "type": ["string", "null"],
+      "description": "Git SHA of the last commit that persisted this state",
+      "pattern": "^[a-f0-9]{40}$|^[a-f0-9]{7}$"
+    },
+    "activeProject": {
+      "type": "string",
+      "description": "Name of the active project/workspace"
+    },
+    "currentPhase": {
+      "type": "string",
+      "description": "Current phase in the work cycle",
+      "enum": [
+        "idle",
+        "planning",
+        "implementing",
+        "testing",
+        "reviewing",
+        "blocked",
+        "completed"
+      ]
+    },
+    "nextIntent": {
+      "type": "string",
+      "description": "Planned action for next session (helps with continuity)"
+    },
+    "errors": {
+      "type": "array",
+      "description": "List of errors from previous session",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "message"],
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "recoverable": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Arbitrary key-value metadata for workspace-specific needs",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
