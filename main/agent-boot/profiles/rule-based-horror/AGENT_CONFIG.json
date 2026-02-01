@@ -1,0 +1,16 @@
+{
+  "boot": {
+    "owner": "l-87hjl",
+    "repo": "agent-boot",
+    "ref": "main",
+    "profile": "rule-based-horror"
+  },
+  "project": {
+    "defaultBranch": "main",
+    "memory": {
+      "state": "docs/memory/STATE.md",
+      "todo": "docs/memory/TODO.md",
+      "changelog": "CHANGELOG.md"
+    }
+  }
+}
