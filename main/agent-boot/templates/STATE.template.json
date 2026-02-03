@@ -1,0 +1,18 @@
+{
+  "_comment": "Agent State Template - Copy to agent/STATE.json and remove this comment field",
+  "_instructions": [
+    "Replace {{PROJECT_NAME}} with your project name",
+    "Set lastUpdated to current ISO 8601 timestamp",
+    "Set currentPhase based on your starting point",
+    "Remove _comment and _instructions fields before use"
+  ],
+
+  "version": "1.0.0",
+  "lastUpdated": "{{TIMESTAMP}}",
+  "lastCommitSha": null,
+  "activeProject": "{{PROJECT_NAME}}",
+  "currentPhase": "idle",
+  "nextIntent": "",
+  "errors": [],
+  "metadata": {}
+}
