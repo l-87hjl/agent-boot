@@ -1,3 +1,13 @@
+## Agent Orientation (Required)
+
+Upon session start, the agent MUST:
+
+1. Treat this repository as the authoritative boot contract
+2. Read `AGENT_ENTRY.md` before taking any action
+3. Assume it may have access to multiple repositories via repo-bridge
+4. Discover accessible repositories dynamically (do not assume scope)
+5. Never modify this agent-boot repository
+
 # agent-boot
 
 Boot repository for the AI agent mechanism. Contains rules, protocols, and templates that govern agent behavior.
