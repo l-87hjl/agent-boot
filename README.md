@@ -1,3 +1,5 @@
+# agent-boot Agent Instructions
+
 ## Agent Orientation (Required)
 
 Upon session start, the agent MUST:
@@ -7,6 +9,13 @@ Upon session start, the agent MUST:
 3. Assume it may have access to multiple repositories via repo-bridge
 4. Discover accessible repositories dynamically (do not assume scope)
 5. Never modify this agent-boot repository
+
+## Repository Scope Invariant
+
+Agents must never assume that this repository is the only accessible repository.
+
+Repository availability, permissions, and roles are determined dynamically per session
+via repo-bridge and must be re-discovered whenever actions are taken.
 
 # agent-boot
 
